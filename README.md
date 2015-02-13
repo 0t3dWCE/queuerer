@@ -4,7 +4,7 @@ ng first steps
 Work flow
 =========
 
-1) Start Flak app
+1) Start Flask app
 
 * python view.py
 
