@@ -1,0 +1,187 @@
+<div ng-controller="HomeCtrl">
+    <div id="Exper" ng-controller="AlertDemoCtrl">
+    <div class="navbar navbar-inverse">
+        <div id="container" ng-controller="DropdownCtrl">
+            <div class="btn-group" dropdown>
+                <button type="button" class="btn btn-info navbar-btn">Action</button>
+                <button type="button" class="btn btn-info dropdown-toggle navbar-btn">
+                    <span class="caret"></span>
+                    <span class="sr-only">Split button!</span>
+                </button>
+                <ul class="dropdown-menu" role="menu" >
+                    <div id="huy" ng-repeat="choice in dropChoices">
+                        <li>
+                            <a href="{{choice.link}}">{{choice.name}}</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+
+                  <li><a href="#">Dropdown link</a></li>
+                  <li><a href="#">Dropdown link</a></li>
+
+                </ul>
+            </div>
+
+            <div class="btn-group" role="group" id="fat_ddl">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <div id="vneshniy">
+                        <li style="width: 400px; height: 200px;">
+                            <div class="mega-menu-content" id="c1">
+                                <div class="row" id="row_1">
+                                    <div class="col-md-6" id="col_1">
+                                        <a href="#">Dropdown link</a>
+                                        <a href="#">Dropdown link</a>
+                                     </div>
+                                    <div class="col-md-4" id="col_2">
+                                        <a href="#">Dropdown link</a>
+                                        <a href="#">Dropdown link</a>
+                                     </div>
+                                </div>
+                                <div class="row" id="row_2">
+                                    <div class="col-md-4" id="col_22" >
+                                        <p>
+                                            <button class='btn btn-info' ng-click="addAlert('info')">Add Alert</button>
+                                        </p>
+                                     </div>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" style="height: 20px;">
+    </div>
+    <div class="row" id="main_container_body" >
+        <div class="col-md-4">
+            <tabset justified="true">
+                <tab heading="Justified">Justified content</tab>
+                <tab heading="SJ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Short Labeled Justified content</p>
+                            <button class='btn btn-danger' ng-click="addAlert('danger')">Add Alert</button>
+                        </div>
+                    </div>
+                </tab>
+                <tab heading="Long Justified">Long Labeled Justified content</tab>
+            </tabset>
+        </div>
+        <div class="col-md-4">
+            <div class="row" id="first">
+                <div class="form-group has-error">
+                    <label class="control-label" for="inputError">Input error</label>
+                    <input type="text" ng-model="bootty" class="form-control" id="inputError">
+                </div>
+            </div>
+            <div class="row" id="second">
+                <form class="bs-component" role="form" ng-submit="getResults()">
+                    <div class="form-group">
+                        <input type="text" ng-model="input_url" name="url" class="form-control" id="url-box" placeholder="Enter URL..." style="max-width: 300px;">
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+            <div id="results-bootty" ng-repeat="entry in res track by $index">
+                <div class="row">
+
+                          <div class="bs-component">
+                              <div class="alert alert-dismissable alert-success">
+                                <button type="button" class="close" ng-click="closeAlerts($index)" data-dismiss="alert">&times;</button>
+                                <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">{{entry}}</a>.
+                              </div>
+                          </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row" > <!--ng-controller="AlertDemoCtrl"-->
+                <div class="col-md-4">
+                    <p>
+                        <button class='btn btn-success' ng-click="addAlert('success')">Add Alert</button>
+                    </p>
+                    <button class='btn btn-danger' ng-click="addAlert('danger')">Add Alert</button>
+                </div>
+                <div class="col-md-8 offset 4">
+                    <div id="papa">
+                        <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well bs-component">
+                <table class="table table-striped table-hover ">
+                    <thead>
+                        <th>#</th>
+                        <th>Color</th>
+                        <th>Type</th>
+                        <th>Count</th>
+                    </thead>
+                    <tbody>
+                        <tr class="warning" ng-Repeat="row in rows" ng-controller="HomeCtrl">
+                            <td>{{row.id}}</td>
+                            <td>{{row.color}}</td>
+                            <td>{{row.type}}</td>
+                            <td>{{row.count}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well bs-component">
+                <div class="row" ng-controller="CameraController">
+                    <!--div class="col-md-6"-->
+                        <!--Full backgroud via css in variables.less-->
+                        <!--video id="bgvid" autoplay ng-show="show"></video>
+                    <!--/div-->
+                    <div class="col-md-6">
+                        <video id="bgvid" autoplay ng-show="show"></video>
+                        <p>
+                            <button class='btn btn-danger' ng-click="updateSize()">Resize</button>
+                        </p>
+                        <p>
+                            <button class='btn btn-danger' ng-click="hideVideo()">Hide/Show Video</button>
+                        </p>
+                        <p>
+                            <button class='btn btn-danger' ng-click="stopPlayVideo()">Stop/Play Video</button>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group has-error">
+                            <label class="control-label" for="inputH">Input Height</label>
+                            <input type="text" ng-model="h" class="form-control" id="inputH">
+
+                            <label class="control-label" for="inputW">Input Width</label>
+                            <input type="text" ng-model="w" class="form-control" id="inputW">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div>
+    </div>
+</div>
+</div>
+

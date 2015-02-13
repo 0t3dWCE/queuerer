@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="queuerer" ng-controller="queuererCtrl">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome from BootstrapCDN -->
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+
+  </head>
+  <body>
+
+    <div class="container" ui-view="main"></div>
+    <div class="container" ui-view="footer"></div>
+
+  </body>
+</html>
